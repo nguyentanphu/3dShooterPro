@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject laser;
 
+    private int Lives = 3;
+
     void Start()
     {
         
@@ -49,6 +51,15 @@ public class Player : MonoBehaviour
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
 		    Instantiate(laser, transform.position, Quaternion.identity);
+	    }
+    }
+
+    public void TakeDamage()
+    {
+	    Lives--;
+	    if (Lives <= 0)
+	    {
+            Destroy(gameObject);
 	    }
     }
 }
