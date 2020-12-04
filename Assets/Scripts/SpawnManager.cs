@@ -25,4 +25,9 @@ public class SpawnManager : MonoBehaviour
             yield return new WaitForSeconds(5f);
 	    }
     }
+
+    public void StopSpawningEnemy()
+    {
+        StopCoroutine(SpawnEnemy());
+    }
 }

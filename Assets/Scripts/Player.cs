@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
 	    Lives--;
 	    if (Lives <= 0)
 	    {
+		    var spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+            spawnManager.StopSpawningEnemy();
             Destroy(gameObject);
 	    }
     }
